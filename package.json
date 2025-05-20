@@ -10,8 +10,9 @@
   "keywords": ["creative", "studio", "design", "motion", "web"],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "tailwindcss": "^3.3.3",
     "daisyui": "^3.5.0"
-  }
+  },
+  "devDependencies": {}
 } 
