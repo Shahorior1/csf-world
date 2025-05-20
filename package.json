@@ -1,0 +1,17 @@
+{
+  "name": "csf-world",
+  "version": "1.0.0",
+  "description": "Creative Studio Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css"
+  },
+  "keywords": ["creative", "studio", "design", "motion", "web"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "daisyui": "^3.5.0"
+  }
+} 

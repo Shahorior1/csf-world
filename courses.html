@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - CSF World</title>
+  <meta name="description" content="Explore our courses in web development, graphic design, motion graphics, and digital marketing.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .course-card {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .course-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .course-card:hover .course-image::after {
+      opacity: 1;
+    }
+    
+    .course-section {
+      scroll-margin-top: 100px;
+    }
+    
+    .price-tag {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-focus) 100%);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      color: white;
+    }
+
+    .badge {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-weight: 500;
+    }
+
+    .badge-primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .badge-secondary {
+      background-color: var(--secondary);
+      color: white;
+    }
+    
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="overflow-fix">
+  <header class="bg-base-100 shadow-md">
+    <div class="container-custom navbar py-4">
+      <div class="navbar-start">
+        <a href="index.html" class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></a>
+      </div>
+      
+      <div class="navbar-end">
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="btn btn-ghost lg:hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Desktop menu -->
+        <ul class="menu menu-horizontal hidden lg:flex">
+          <li><a href="index.html" class="font-semibold">Home</a></li>
+          <li><a href="services.html" class="font-semibold">Services</a></li>
+          <li><a href="about.html" class="font-semibold">About</a></li>
+          <li><a href="courses.html" class="font-semibold">Courses</a></li>
+          <li><a href="contact.html" class="font-semibold">Contact</a></li>
+        </ul>
+        
+        <!-- Theme toggle button -->
+        <button id="theme-toggle" class="btn btn-circle btn-ghost ml-4">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <ul class="menu menu-vertical p-4 bg-base-100 w-full">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>   
+    </div>
+  </header>
+
+  <main>
+    <!-- Courses Hero -->
+    <section class="bg-base-200 py-20">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h1 class="heading-lg mb-6">Our Courses</h1>
+          <p class="text-xl max-w-3xl mx-auto">Master new skills with our expert-led courses in web development, graphic design, motion graphics, and digital marketing.</p>
+        </div>
+        
+        <!-- Course Navigation -->
+        <div class="flex justify-center flex-wrap gap-4 mb-12">
+          <a href="#web-development" class="btn btn-primary">Web Development</a>
+          <a href="#graphic-design" class="btn btn-outline">Graphic Design</a>
+          <a href="#motion-graphics" class="btn btn-outline">Motion Graphics</a>
+          <a href="#digital-marketing" class="btn btn-outline">Digital Marketing</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Development Course Section -->
+    <section id="web-development" class="section-padding bg-base-100 course-section">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Web Development Courses</h2>
+          <p class="text-xl max-w-3xl mx-auto">Master modern web development skills with our comprehensive courses.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Frontend Development Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Frontend Web Development" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">Frontend Development</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Beginner to Advanced</div>
+                <div class="badge bg-base-200">12 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Master HTML, CSS, JavaScript, and modern frameworks like React.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">18,000৳</span>
+                  <span class="text-xl font-bold text-primary">9,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Backend Development Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Backend Web Development" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">Backend Development</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Intermediate</div>
+                <div class="badge bg-base-200">10 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Learn server-side programming, databases, and API development.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">18,000৳</span>
+                  <span class="text-xl font-bold text-primary">9,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Graphic Design Course Section -->
+    <section id="graphic-design" class="section-padding bg-base-200 course-section">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Graphic Design Courses</h2>
+          <p class="text-xl max-w-3xl mx-auto">Develop your creative skills and master industry-standard design tools.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- Adobe Suite Mastery Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Adobe Creative Suite Mastery" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">Adobe Creative Suite</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Beginner</div>
+                <div class="badge bg-base-200">8 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Master Photoshop, Illustrator, and InDesign for professional design.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">16,000৳</span>
+                  <span class="text-xl font-bold text-primary">8,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Brand Identity Design Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <div class="absolute -top-2 right-2 z-10">
+              <div class="badge badge-secondary p-2">Popular</div>
+            </div>
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Brand Identity Design" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">Brand Identity Design</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Intermediate</div>
+                <div class="badge bg-base-200">10 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Create cohesive brand identities including logos and brand guidelines.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">16,000৳</span>
+                  <span class="text-xl font-bold text-primary">8,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motion Graphics Course Section -->
+    <section id="motion-graphics" class="section-padding bg-base-100 course-section">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Motion Graphics Courses</h2>
+          <p class="text-xl max-w-3xl mx-auto">Bring designs to life with animation principles and industry-standard software.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- After Effects Fundamentals Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="After Effects Fundamentals" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">After Effects Fundamentals</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Beginner</div>
+                <div class="badge bg-base-200">8 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Master Adobe After Effects for stunning motion graphics and visual effects.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">20,000৳</span>
+                  <span class="text-xl font-bold text-primary">10,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 3D Animation Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="3D Animation" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">2D & 3D Animation Basics</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Intermediate</div>
+                <div class="badge bg-base-200">10 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Learn 3D modeling, texturing, lighting, and animation using Cinema 4D.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">20,000৳</span>
+                  <span class="text-xl font-bold text-primary">10,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Marketing Course Section -->
+    <section id="digital-marketing" class="section-padding bg-base-200 course-section">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Digital Marketing Courses</h2>
+          <p class="text-xl max-w-3xl mx-auto">Master digital marketing with courses designed for today's competitive online landscape.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <!-- SEO & Content Marketing Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="SEO & Content Marketing" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">SEO & Content Marketing</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">All Levels</div>
+                <div class="badge bg-base-200">8 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Create and optimize content that ranks well and drives organic traffic.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">16,000৳</span>
+                  <span class="text-xl font-bold text-primary">8,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Social Media Marketing Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <div class="absolute -top-2 right-2 z-10">
+              <div class="badge badge-secondary p-2">Popular</div>
+            </div>
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Social Media Marketing" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">Social Media Marketing</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Beginner</div>
+                <div class="badge bg-base-200">10 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Build effective social media campaigns across major platforms.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">16,000৳</span>
+                  <span class="text-xl font-bold text-primary">8,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Digital Marketing Strategy Course -->
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-all course-card">
+            <figure class="aspect-video course-image">
+              <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Digital Marketing Strategy" 
+                   class="w-full h-full object-cover" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title text-xl font-bold">Digital Marketing Strategy</h3>
+              <div class="flex items-center gap-2 mb-3">
+                <div class="badge badge-primary">Advanced</div>
+                <div class="badge bg-base-200">12 Weeks</div>
+              </div>
+              <p class="mb-4 text-base-content/80">Develop comprehensive strategies that align with business goals.</p>
+              <div class="card-actions justify-between items-center">
+                <div class="flex flex-col">
+                  <span class="text-xl font-bold line-through text-gray-500">16,000৳</span>
+                  <span class="text-xl font-bold text-primary">8,000৳</span>
+                  <span class="text-sm text-success font-medium">50% OFF</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="bg-primary text-primary-content py-20">
+      <div class="container-custom">
+        <div class="text-center mb-10 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Ready to Start Your Learning Journey?</h2>
+          <p class="text-xl max-w-3xl mx-auto opacity-90">Our expert instructors are ready to help you master new skills and achieve your career goals.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="card bg-primary-focus animate-on-scroll">
+            <div class="card-body text-center">
+              <div class="text-4xl mb-4">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h3 class="card-title text-xl justify-center mb-2">Expert Instructors</h3>
+              <p>Learn from industry professionals with years of real-world experience.</p>
+            </div>
+          </div>
+          
+          <div class="card bg-primary-focus animate-on-scroll">
+            <div class="card-body text-center">
+              <div class="text-4xl mb-4">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3 class="card-title text-xl justify-center mb-2">Practical Projects</h3>
+              <p>Build a professional portfolio with real-world projects and exercises.</p>
+            </div>
+          </div>
+          
+          <div class="card bg-primary-focus animate-on-scroll">
+            <div class="card-body text-center">
+              <div class="text-4xl mb-4">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 class="card-title text-xl justify-center mb-2">Industry Recognition</h3>
+              <p>Earn certificates recognized by employers across the industry.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center animate-on-scroll">
+          <a href="contact.html" class="btn btn-lg btn-secondary">Enroll Today</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-base-200 text-base-content">
+    <div class="container-custom py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <a href="index.html" class="text-2xl font-bold font-display mb-4 inline-block">CSF<span class="text-primary">World</span></a>
+          <p class="mb-4">Motion. Web. Graphics. Logos. Video — all in one creative studio.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html#motion" class="hover:text-primary">Motion Graphics</a></li>
+            <li><a href="services.html#web" class="hover:text-primary">Web Development</a></li>
+            <li><a href="services.html#logo" class="hover:text-primary">Logo Design</a></li>
+            <li><a href="services.html#graphic" class="hover:text-primary">Graphic Design</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li><i class="fas fa-envelope mr-2"></i> csfworld@gmail.com</li>
+            <li><i class="fas fa-phone mr-2"></i> +8801717171717</li>
+            <li><i class="fas fa-map-marker-alt mr-2"></i>Park More, Rangpur 5404</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary mt-4">Get in Touch</a>
+        </div>
+      </div>
+      
+      <div class="divider my-8"></div>
+      
+      <div class="text-center">
+        <p>&copy; 2025 CSF World. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 

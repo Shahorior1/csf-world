@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSF World - Creative Studio</title>
+  <meta name="description" content="Motion. Web. Graphics. Logos. Video — all in one creative studio.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Background styles */
+    body {
+      position: relative;
+      background-color: var(--b1, #ffffff);
+    }
+    
+    .site-bg-canvas {
+      animation: breathe 15s ease-in-out infinite;
+      mix-blend-mode: multiply;
+    }
+    
+    @keyframes breathe {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 0.35; }
+    }
+    
+    /* Dark mode adjustments for background */
+    html[data-theme="dark"] .site-bg-canvas {
+      mix-blend-mode: screen;
+      opacity: 0.15 !important;
+    }
+
+    /* New hero section styling */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0c1e40 0%, #152a56 100%);
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+    
+    /* Wavy bottom edge */
+    .wave-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .wave-bottom svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 120px;
+      filter: drop-shadow(0 -5px 5px rgba(0,0,0,0.1));
+      animation: waveFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes waveFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .wave-bottom .shape-fill {
+      fill: #FFFFFF;
+    }
+    
+    /* Glowing title with enhanced effects */
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #a855f7, #6366f1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(163, 85, 247, 0.5);
+      position: relative;
+      z-index: 2;
+      letter-spacing: -0.02em;
+      transition: text-shadow 0.3s ease;
+    }
+    
+    .hero-title:hover {
+      text-shadow: 0 0 30px rgba(163, 85, 247, 0.8);
+    }
+    
+    /* Apply blinking cursor effect to the title */
+    .hero-title::after {
+      content: '|';
+      animation: blink 1s step-start infinite;
+      opacity: 0;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    
+    .hero-subtitle {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Connector lines with enhanced styling */
+    .connector-line {
+      position: absolute;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.5));
+      z-index: 1;
+      border-radius: 1px;
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+    }
+    
+    /* Hero buttons with enhanced styling */
+    .hero-gradient .btn {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-gradient .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: all 0.6s;
+    }
+    
+    .hero-gradient .btn:hover::before {
+      left: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Animation styles */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+      100% { opacity: 0.4; }
+    }
+    
+    @keyframes colorShift {
+      0% { color: #6366f1; }
+      33% { color: #8b5cf6; }
+      66% { color: #ec4899; }
+      100% { color: #6366f1; }
+    }
+    
+    /* New animations */
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-20px) translateX(-50%); }
+      60% { transform: translateY(-10px) translateX(-50%); }
+    }
+    
+    @keyframes fadeRotate {
+      0% { opacity: 0; transform: rotate(-10deg) scale(0.9); }
+      100% { opacity: 1; transform: rotate(0) scale(1); }
+    }
+    
+    @keyframes iconPop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes borderPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+      50% { box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3); }
+    }
+    
+    @keyframes drawUnderline {
+      0% { width: 0; left: 50%; }
+      100% { width: 100%; left: 0; }
+    }
+    
+    /* Rest of the existing styles */
+    .text-animation {
+      display: inline-block;
+      position: relative;
+    }
+    
+    .text-animation .text-primary {
+      animation: colorShift 8s infinite;
+    }
+    
+    .animated-bg-canvas {
+      animation: pulse 8s infinite;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .slide-in-left {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+    
+    .slide-in-right {
+      animation: slideInRight 1s ease-out forwards;
+    }
+    
+    .rotate-icon {
+      animation: rotate 3s linear infinite;
+      display: inline-block;
+    }
+    
+    .bounce-animation {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    
+    .fade-rotate {
+      animation: fadeRotate 0.7s ease-out forwards;
+    }
+    
+    /* Enhanced service section animations */
+    .service-card {
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      will-change: transform; /* Optimize animations */
+    }
+    
+    .service-card.animate-fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .service-card .text-4xl {
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .icon-wrapper {
+      animation: iconPop 0.5s ease-in-out;
+    }
+    
+    .icon-wrapper {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    
+    /* 3D tilt effect styles */
+    .service-card {
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Text glow effect */
+    .text-glow {
+      text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    /* Button pulse animation */
+    .pulse-animation {
+      animation: borderPulse 1.5s infinite;
+    }
+    
+    /* Animated underline for section headings */
+    .animated-underline {
+      position: absolute;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--secondary, #ec4899) 100%);
+      bottom: -8px;
+      left: 50%;
+      width: 0;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+    
+    .animate-underline {
+      animation: drawUnderline 1s ease forwards;
+    }
+    
+    /* Service section header animation */
+    .heading-lg {
+      transition: all 0.3s ease;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .stagger-animation > * {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .stagger-visible > *:nth-child(1) {
+      animation: fadeIn 0.5s ease forwards 0.1s;
+    }
+    
+    .stagger-visible > *:nth-child(2) {
+      animation: fadeIn 0.5s ease forwards 0.2s;
+    }
+    
+    .stagger-visible > *:nth-child(3) {
+      animation: fadeIn 0.5s ease forwards 0.3s;
+    }
+    
+    .stagger-visible > *:nth-child(4) {
+      animation: fadeIn 0.5s ease forwards 0.4s;
+    }
+    
+    .stagger-visible > *:nth-child(5) {
+      animation: fadeIn 0.5s ease forwards 0.5s;
+    }
+    
+    .stagger-visible > *:nth-child(6) {
+      animation: fadeIn 0.5s ease forwards 0.6s;
+    }
+  </style>
+</head>
+<body class="overflow-fix">
+  <header class="bg-base-100 shadow-md">
+    <div class="container-custom navbar py-4">
+      <div class="navbar-start">
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/csfworld-logo.svg" alt="CSFWorld Logo" class="h-10 mr-3">
+          <span class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></span>
+        </a>
+      </div>
+      
+      <div class="navbar-end">
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="btn btn-ghost lg:hidden">
+          <i class="fas fa-bars"></i>   
+        </button>
+        
+        <!-- Desktop menu -->
+        <ul class="menu menu-horizontal hidden lg:flex">
+          <li><a href="index.html" class="font-semibold">Home</a></li>
+          <li><a href="services.html" class="font-semibold">Services</a></li>
+          <li><a href="about.html" class="font-semibold">About</a></li>
+          <li><a href="courses.html" class="font-semibold">Courses</a></li>
+          <li><a href="contact.html" class="font-semibold">Contact</a></li>
+        </ul>
+        
+        <!-- Theme toggle button -->
+        <button id="theme-toggle" class="btn btn-circle btn-ghost ml-4">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <ul class="menu menu-vertical p-4 bg-base-100 w-full">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-900 to-blue-800 text-white flex items-center justify-center py-20" style="min-height: 80vh;">
+      <div class="container-custom mx-auto w-4/5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="fade-in" style="animation: fadeIn 1.2s ease-in-out;">
+            <h1 class="text-5xl font-bold mb-6">Creativity meets strategy <br>we're your digital marketing powerhouse</h1>
+            <p class="text-xl mb-8 text-white/90">Motion. Web. Graphics. Logos. — all in one creative studio.</p>
+            <div class="flex flex-wrap gap-4">
+              <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Strategy Call</a>
+              <a href="portfolio.html" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">See Our Work</a>
+            </div>
+          </div>
+          <div class="fade-in" style="animation: fadeIn 1.2s ease-in-out 0.3s both;">
+            <!-- Video showreel with simple border -->
+            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-white/10">
+              <!-- Direct video player -->
+              <video 
+                class="w-full h-full object-cover" 
+                autoplay 
+                muted 
+                loop 
+                controls
+                preload="metadata"
+                id="hero-video">
+                <source src="assets/videos/csf-world-video.mp4" type="video/mp4">
+                <source src="assets/videos/csf-world-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Simple down arrow -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center opacity-80" style="animation: bounce 2s infinite;">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+        40% { transform: translateY(-20px) translateX(-50%); }
+        60% { transform: translateY(-10px) translateX(-50%); }
+      }
+    </style>
+
+    <!-- Services Preview -->
+    <section class="section-padding bg-base-100">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll" data-rotate="true">
+          <p class="text-primary font-bold mb-2 animate-fade-in">• OUR SERVICES •</p>
+          <h2 class="text-4xl font-bold text-[#3A3B66] mb-4 relative">
+            Explore Our Top IT Solutions
+            <span class="animated-underline animate-underline"></span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Digital Marketing -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-chart-line text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Digital Marketing</h3>
+            <p class="text-gray-600">Digital marketing boosts brand, engages targets & drives business growth online.</p>
+          </div>
+
+          <!-- Social Media Marketing -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 100ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-desktop text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Social Media Marketing</h3>
+            <p class="text-gray-600">Using social platforms to connect with audiences and build a brand.</p>
+          </div>
+
+          <!-- Advertising -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 200ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-bullhorn text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Advertising</h3>
+            <p class="text-gray-600">Paid promotion of products, services, or brands to reach a larger audience.</p>
+          </div>
+
+          <!-- Content Marketing -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 300ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-file-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Content Marketing</h3>
+            <p class="text-gray-600">Creating and distributing valuable content to attract and engage a target audience.</p>
+          </div>
+
+          <!-- SEO Optimization -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 400ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-search text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">SEO Optimization</h3>
+            <p class="text-gray-600">Optimizing online content to rank higher in search engine results.</p>
+          </div>
+
+          <!-- Email Marketing -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 500ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-envelope text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Email Marketing</h3>
+            <p class="text-gray-600">Sending targeted emails to nurture leads or engage customers.</p>
+          </div>
+
+          <!-- Video Editing & Animation -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 700ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-video text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Video Editing & Animation</h3>
+            <p class="text-gray-600">Create eye-catching videos with our dynamic editing and animation services.</p>
+          </div>
+
+          <!-- Graphics Design -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 800ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-pen-nib text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Graphics Design</h3>
+            <p class="text-gray-600">Create impactful graphic designs that convey your brand message to your audience.</p>
+          </div>
+
+          <!-- UX UI Design -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 900ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-window-restore text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">UX UI Design</h3>
+            <p class="text-gray-600">Crafting intuitive and visually stunning user experiences that engage and delight.</p>
+          </div>
+
+          <!-- Web Development -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 1000ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-code text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Web Development</h3>
+            <p class="text-gray-600">Building and maintaining websites to ensure functionality and user experience.</p>
+          </div>
+
+          <!-- App Development -->
+          <div class="p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center service-card animate-on-scroll" style="animation-delay: 1100ms;">
+            <div class="w-20 h-20 bg-[#0081ff] rounded-full flex items-center justify-center mb-4 transform transition-transform duration-300 hover:scale-110 icon-wrapper">
+              <i class="fas fa-mobile-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">App Development</h3>
+            <p class="text-gray-600">Transform your ideas into powerful mobile apps with our expert developers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="section-padding bg-base-200 min-h-section">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Featured Work</h2>
+          <p class="text-xl content-narrow">Take a look at some of our recent projects that showcase our creative capabilities.</p>
+        </div>
+
+        <!-- Portfolio Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          <button class="btn btn-sm md:btn-md btn-primary portfolio-filter active" data-filter="all">All Projects</button>
+          <button class="btn btn-sm md:btn-md btn-outline portfolio-filter" data-filter="motion">Motion</button>
+          <button class="btn btn-sm md:btn-md btn-outline portfolio-filter" data-filter="web">Web</button>
+          <button class="btn btn-sm md:btn-md btn-outline portfolio-filter" data-filter="video">Video</button>
+          <button class="btn btn-sm md:btn-md btn-outline portfolio-filter" data-filter="logo">Brand</button>
+          <button class="btn btn-sm md:btn-md btn-outline portfolio-filter" data-filter="graphic">Graphic</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <!-- Portfolio Item 1 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll" data-category="motion web">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <img src="assets/images/branding-templates.jpg" 
+                   alt="Brand Motion Package" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Motion Design</span>
+                <h3 class="text-xl font-bold text-white mb-1">Brand Motion Package</h3>
+                <p class="text-white/80 text-sm mb-4">Complete motion graphics package for a tech startup</p>
+                <a href="portfolio.html#tech-nova" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">Brand Motion Package</h3>
+                <div class="badge badge-sm">Motion</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 2 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll" data-category="web video">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <video 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                   autoplay muted loop preload="metadata">
+                <source src="assets/videos/MONTAGE_2.mp4" type="video/mp4">
+              </video>
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Web Development</span>
+                <h3 class="text-xl font-bold text-white mb-1">E-commerce Website</h3>
+                <p class="text-white/80 text-sm mb-4">Responsive online store with modern UX/UI design</p>
+                <a href="services.html#web" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">E-commerce Website</h3>
+                <div class="badge badge-sm">Web + Video</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 3 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll" data-category="logo">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <img src="assets/images/branding-templates.jpg" 
+                   alt="Logo & Brand Identity" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Logo Design</span>
+                <h3 class="text-xl font-bold text-white mb-1">Logo & Brand Identity</h3>
+                <p class="text-white/80 text-sm mb-4">Complete brand identity system for a lifestyle brand</p>
+                <a href="portfolio.html#bloom" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">Logo & Brand Identity</h3>
+                <div class="badge badge-sm">Brand</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 4 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll hidden lg:block" data-category="video">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                   alt="Adventure Series" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Video Editing</span>
+                <h3 class="text-xl font-bold text-white mb-1">Adventure Series</h3>
+                <p class="text-white/80 text-sm mb-4">YouTube series for outdoor adventure brand</p>
+                <a href="portfolio.html#adventure" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">Adventure Series</h3>
+                <div class="badge badge-sm">Video</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 5 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll hidden lg:block" data-category="motion">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1579762593175-20226054cad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                   alt="FinTech Explainer" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Motion Design</span>
+                <h3 class="text-xl font-bold text-white mb-1">FinTech Explainer</h3>
+                <p class="text-white/80 text-sm mb-4">Motion graphics explaining complex financial products</p>
+                <a href="portfolio.html#fintech" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">FinTech Explainer</h3>
+                <div class="badge badge-sm">Motion</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 6 -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll hidden lg:block" data-category="web video">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                   alt="Travel Blog & Vlog" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Web + Video</span>
+                <h3 class="text-xl font-bold text-white mb-1">Travel Blog & Vlog</h3>
+                <p class="text-white/80 text-sm mb-4">Custom website and video content for travel influencer</p>
+                <a href="portfolio.html#travel-vlog" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">Travel Blog & Vlog</h3>
+                <div class="badge badge-sm">Web + Video</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 7 - Graphic Design Portfolio Video -->
+          <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl animate-on-scroll hidden lg:block" data-category="graphic">
+            <div class="aspect-video bg-base-300 relative overflow-hidden">
+              <video 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                   autoplay muted loop preload="metadata">
+                <source src="assets/videos/Comp-.mp4" type="video/mp4">
+              </video>
+              <!-- Overlay with info -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span class="badge badge-primary mb-2">Graphic Design</span>
+                <h3 class="text-xl font-bold text-white mb-1">Graphic Design Portfolio</h3>
+                <p class="text-white/80 text-sm mb-4">Showcase of our graphic design capabilities and creative projects</p>
+                <a href="services.html#graphic" class="btn btn-sm btn-primary">View Details</a>
+              </div>
+            </div>
+            <!-- Info visible by default -->
+            <div class="p-4 bg-base-100">
+              <div class="flex justify-between items-center">
+                <h3 class="font-bold">Graphic Design Portfolio</h3>
+                <div class="badge badge-sm">Graphic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo & Brand Identity Showcase -->
+    <section class="section-padding bg-base-100">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Logo & Brand Identity</h2>
+          <p class="text-xl content-narrow">Discover how we create memorable, distinctive brands that leave a lasting impression.</p>
+        </div>
+        
+        <!-- Brand Showcase Gallery -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+          <!-- Brand 1 -->
+          <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-base-200 animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                 alt="Minimalist Logo Design" 
+                 class="w-full aspect-square object-cover" loading="lazy" />
+            <div class="p-4">
+              <h3 class="font-bold">Minimalist</h3>
+            </div>
+          </div>
+          
+          <!-- Brand 2 -->
+          <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-base-200 animate-on-scroll">
+            <img src="assets/images/Bold-Typography-Logo.jpg" 
+                 alt="Bold Typography Logo" 
+                 class="w-full aspect-square object-cover" loading="lazy" />
+            <div class="p-4">
+              <h3 class="font-bold">Typography</h3>
+            </div>
+          </div>
+          
+          <!-- Brand 3 -->
+          <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-base-200 animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
+                 alt="Abstract Logo Design" 
+                 class="w-full aspect-square object-cover" loading="lazy" />
+            <div class="p-4">
+              <h3 class="font-bold">Abstract</h3>
+            </div>
+          </div>
+          
+          <!-- Brand 4 -->
+          <div class="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-base-200 animate-on-scroll">
+            <img src="assets/images/Modern-Brand-Identity.jpg" 
+                 alt="Modern Brand Identity" 
+                 class="w-full aspect-square object-cover" loading="lazy" />
+            <div class="p-4">
+              <h3 class="font-bold">Modern</h3>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Brand Identity Components -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="card bg-base-200 animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-2xl mb-4">Our Brand Design Process</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                  <span><strong>Discovery:</strong> Understanding your vision, values, and audience</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                  <span><strong>Concept:</strong> Creating unique visual expressions of your brand</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                  <span><strong>Refinement:</strong> Perfecting the selected direction</span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                  <span><strong>Implementation:</strong> Delivering brand assets for all platforms</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card bg-base-200 animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-2xl mb-4">Complete Brand Package</h3>
+              <ul class="grid grid-cols-2 gap-3">
+                <li class="flex items-center bg-base-100 rounded p-3">
+                  <i class="fas fa-palette text-primary mr-2"></i>
+                  <span>Logo Design</span>
+                </li>
+                <li class="flex items-center bg-base-100 rounded p-3">
+                  <i class="fas fa-paint-brush text-primary mr-2"></i>
+                  <span>Color Palette</span>
+                </li>
+                <li class="flex items-center bg-base-100 rounded p-3">
+                  <i class="fas fa-font text-primary mr-2"></i>
+                  <span>Typography</span>
+                </li>
+                <li class="flex items-center bg-base-100 rounded p-3">
+                  <i class="fas fa-images text-primary mr-2"></i>
+                  <span>Imagery Style</span>
+                </li>
+                <li class="flex items-center bg-base-100 rounded p-3">
+                  <i class="fas fa-file-alt text-primary mr-2"></i>
+                  <span>Brand Guidelines</span>
+                </li>
+                <li class="flex items-center bg-base-100 rounded p-3">
+                  <i class="fas fa-box-open text-primary mr-2"></i>
+                  <span>Asset Package</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Preview -->
+    <section class="section-padding bg-base-100">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="heading-lg mb-4">What Our Clients Say</h2>
+          <p class="text-xl content-narrow">We've helped businesses of all sizes achieve their creative goals.</p>
+        </div>
+
+        <div class="carousel w-full">
+          <!-- Testimonial 1 -->
+          <div id="testimonial1" class="carousel-item relative w-full">
+            <div class="card bg-base-200 shadow-lg content-medium mx-auto animate-on-scroll">
+              <div class="card-body text-center">
+                <div class="mb-4">
+                  <i class="fas fa-quote-left text-4xl text-primary/50"></i>
+                </div>
+                <p class="text-xl mb-6">CSF World transformed our brand with their exceptional motion design and web development. Their creativity and attention to detail exceeded our expectations.</p>
+                <div class="flex flex-col items-center">
+                  <div class="avatar mb-2">
+                    <div class="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden">
+                      <img src="assets/images/Sarah-Johnson.jpg" alt="Sarah Johnson" loading="lazy" />
+                    </div>
+                  </div>
+                  <h3 class="font-bold">Sarah Johnson</h3>
+                  <p class="text-sm">Marketing Director, TechNova</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#testimonial3" class="btn btn-circle">❮</a> 
+              <a href="#testimonial2" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div id="testimonial2" class="carousel-item relative w-full">
+            <div class="card bg-base-200 shadow-lg content-medium mx-auto animate-on-scroll">
+              <div class="card-body text-center">
+                <div class="mb-4">
+                  <i class="fas fa-quote-left text-4xl text-primary/50"></i>
+                </div>
+                <p class="text-xl mb-6">The branding package CSF World created for our startup has been instrumental in establishing our market presence. Their strategic approach and design expertise are unmatched.</p>
+                <div class="flex flex-col items-center">
+                  <div class="avatar mb-2">
+                    <div class="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden">
+                      <img src="assets/images/mechon.jpg" alt="Michael Chen" loading="lazy" />
+                    </div>
+                  </div>
+                  <h3 class="font-bold">Michael Chen</h3>
+                  <p class="text-sm">Founder, EcoStore</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#testimonial1" class="btn btn-circle">❮</a> 
+              <a href="#testimonial3" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div id="testimonial3" class="carousel-item relative w-full">
+            <div class="card bg-base-200 shadow-lg content-medium mx-auto animate-on-scroll">
+              <div class="card-body text-center">
+                <div class="mb-4">
+                  <i class="fas fa-quote-left text-4xl text-primary/50"></i>
+                </div>
+                <p class="text-xl mb-6">The video content CSF World produced for our adventure series was breathtaking. They captured our brand's spirit perfectly and delivered content that our audience loves.</p>
+                <div class="flex flex-col items-center">
+                  <div class="avatar mb-2">
+                    <div class="w-16 h-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-hidden">
+                      <img src="assets/images/Alex-Morgan.jpg" alt="Alex Morgan" loading="lazy" />
+                    </div>
+                  </div>
+                  <h3 class="font-bold">Alex Morgan</h3>
+                  <p class="text-sm">Content Director, Adventure Outpost</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#testimonial2" class="btn btn-circle">❮</a> 
+              <a href="#testimonial1" class="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial Navigation Dots -->
+        <div class="flex justify-center w-full py-4 gap-2">
+          <a href="#testimonial1" class="btn btn-xs bg-primary">1</a> 
+          <a href="#testimonial2" class="btn btn-xs">2</a> 
+          <a href="#testimonial3" class="btn btn-xs">3</a>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="testimonials.html" class="btn btn-lg btn-outline">Read More Reviews</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding bg-primary text-primary-content">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll animate-left">
+            <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">Ready to elevate your brand?</h2>
+            <p class="text-xl mb-8">Let's discuss how our creative services can help you reach your goals. Schedule a free strategy call today.</p>
+            <a href="contact.html" class="btn btn-lg glass">Get Started</a>
+          </div>
+          <div class="animate-on-scroll animate-right">
+            <div class="card bg-base-100 text-base-content shadow-xl">
+              <div class="card-body">
+                <h3 class="card-title text-2xl mb-4">Book Your Free Strategy Call</h3>
+                <form class="stagger-animation">
+                  <div class="form-control mb-4">
+                    <label class="label">
+                      <span class="label-text">Name</span>
+                    </label>
+                    <input type="text" placeholder="Your name" class="input input-bordered w-full" />
+                  </div>
+                  <div class="form-control mb-4">
+                    <label class="label">
+                      <span class="label-text">Email</span>
+                    </label>
+                    <input type="email" placeholder="Your email" class="input input-bordered w-full" />
+                  </div>
+                  <div class="form-control mb-4">
+                    <label class="label">
+                      <span class="label-text">What service are you interested in?</span>
+                    </label>
+                    <select class="select select-bordered w-full">
+                      <option disabled selected>Select a service</option>
+                      <option>Motion Design</option>
+                      <option>Web Design</option>
+                      <option>Logo Design</option>
+                      <option>Graphic Design</option>
+                    </select>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button type="submit" class="btn btn-primary">Schedule Call</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-base-200 text-base-content">
+    <div class="container-custom py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <a href="index.html" class="flex items-center mb-4">
+            <img src="assets/images/csfworld-logo.svg" alt="CSFWorld Logo" class="h-10 mr-3">
+            <span class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></span>
+          </a>
+          <p class="mb-4">Motion. Web. Graphics. Logos. Video — all in one creative studio.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html#motion" class="hover:text-primary">Motion Design</a></li>
+            <li><a href="services.html#web" class="hover:text-primary">Web Design</a></li>
+            <li><a href="services.html#logo" class="hover:text-primary">Logo Design</a></li>
+            <li><a href="services.html#graphic" class="hover:text-primary">Graphic Design</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="portfolio.html" class="hover:text-primary">Portfolio</a></li>
+            <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li><i class="fas fa-envelope mr-2"> </i>info@csfworlds.com </li>
+            <li><i class="fas fa-phone mr-2"> </i>01744712521 </li>
+            <li><i class="fas fa-map-marker-alt mr-2"> </i>123 Creative St, Design City </li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary mt-4">Get in Touch</a>
+        </div>
+      </div>
+      
+      <div class="divider my-8"></div>
+      
+      <div class="text-center">
+        <p>&copy; 2025 CSF World. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script defer src="js/main.js"></script>
+  <script defer src="js/animation.js"></script>
+
+  <!-- Direct video player script -->
+  <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get reference to the direct video player
+      const videoPlayer = document.querySelector('#showreel-container video');
+      
+      // Optional: Add any custom video behavior here
+      if (videoPlayer) {
+        // Example: Log when video starts playing
+        videoPlayer.addEventListener('playing', function() {
+          console.log('Video started playing');
+        });
+        
+        // Example: Auto-replay if needed beyond the loop attribute
+        videoPlayer.addEventListener('ended', function() {
+          if (!videoPlayer.loop) {
+            videoPlayer.play();
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Add this before the closing </body> tag -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Portfolio filtering
+      const filterButtons = document.querySelectorAll('.portfolio-filter');
+      const portfolioItems = document.querySelectorAll('[data-category]');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Update active state
+          filterButtons.forEach(btn => btn.classList.remove('btn-primary', 'active'));
+          filterButtons.forEach(btn => btn.classList.add('btn-outline'));
+          this.classList.remove('btn-outline');
+          this.classList.add('btn-primary', 'active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          portfolioItems.forEach(item => {
+            const categories = item.getAttribute('data-category')?.split(' ') || [];
+            
+            if (filter === 'all' || categories.includes(filter)) {
+              // Show this item
+              item.classList.remove('hidden');
+              if (window.innerWidth >= 1024 || item.dataset.category === 'all') {
+                item.classList.remove('lg:block');
+              }
+            } else {
+              // Hide this item
+              if (window.innerWidth >= 1024) {
+                item.classList.add('hidden');
+                item.classList.remove('lg:block');
+              } else {
+                item.classList.add('hidden');
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- Hero Video Fullscreen Control Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroVideo = document.getElementById('hero-video');
+      
+      if (heroVideo) {
+        // Store the original state of the video
+        let wasPlaying = false;
+        
+        // Function to detect fullscreen change
+        function handleFullscreenChange() {
+          // Check if currently in fullscreen mode
+          const isFullScreen = !!(
+            document.fullscreenElement || 
+            document.webkitFullscreenElement || 
+            document.mozFullScreenElement || 
+            document.msFullscreenElement
+          );
+          
+          if (isFullScreen) {
+            // Entering fullscreen
+            wasPlaying = !heroVideo.paused;
+            heroVideo.pause();
+            heroVideo.removeAttribute('loop');
+            console.log('Entered fullscreen, video paused');
+          } else {
+            // Exiting fullscreen
+            if (wasPlaying) {
+              heroVideo.setAttribute('loop', '');
+              heroVideo.play();
+              console.log('Exited fullscreen, video resumed');
+            }
+          }
+        }
+        
+        // Add event listeners for fullscreen change across browsers
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+        document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+        document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+        
+        // Add event listener for the video element itself
+        heroVideo.addEventListener('enterpictureinpicture', function() {
+          wasPlaying = !heroVideo.paused;
+          heroVideo.pause();
+          heroVideo.removeAttribute('loop');
+        });
+        
+        heroVideo.addEventListener('leavepictureinpicture', function() {
+          if (wasPlaying) {
+            heroVideo.setAttribute('loop', '');
+            heroVideo.play();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

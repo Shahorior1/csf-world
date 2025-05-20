@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - CSF World</title>
+  <meta name="description" content="Our creative services include motion design, web design, logo design, and graphic design.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .service-section {
+      scroll-margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-base-100 shadow-md">
+    <div class="container-custom navbar py-4">
+      <div class="navbar-start">
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/csfworld-logo.svg" alt="CSFWorld Logo" class="h-10 mr-3">
+          <span class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></span>
+        </a>
+      </div>
+      
+      <div class="navbar-end">
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="btn btn-ghost lg:hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Desktop menu -->
+        <ul class="menu menu-horizontal hidden lg:flex">
+          <li><a href="index.html" class="font-semibold">Home</a></li>
+          <li><a href="services.html" class="font-semibold">Services</a></li>
+          <li><a href="about.html" class="font-semibold">About</a></li> 
+          <li><a href="courses.html" class="font-semibold">Courses</a></li>
+          <li><a href="contact.html" class="font-semibold">Contact</a></li>
+        </ul>
+        
+        <!-- Theme toggle button -->
+        <button id="theme-toggle" class="btn btn-circle btn-ghost ml-4">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <ul class="menu menu-vertical p-4 bg-base-100 w-full">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Services Hero -->
+    <section class="bg-base-200 py-20">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h1 class="heading-lg mb-6">Our Services</h1>
+          <p class="text-xl max-w-3xl mx-auto">We offer comprehensive creative solutions to help your brand stand out in today's competitive market. From motion design to branding, our services are designed to elevate your brand presence.</p>
+        </div>
+        
+        <div class="flex justify-center flex-wrap gap-4">
+          <a href="#motion" class="btn btn-primary">Motion Design</a>
+          <a href="#web" class="btn btn-primary">Web Design</a>
+          <a href="#logo" class="btn btn-primary">Logo Design</a>
+          <a href="#graphic" class="btn btn-primary">Graphic Design</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motion Design Service -->
+    <section id="motion" class="section-padding bg-base-100 service-section">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1 animate-on-scroll">
+            <div class="flex items-center mb-4">
+              <div class="text-5xl text-primary mr-4">🎥</div>
+              <h2 class="heading-md">Motion Design</h2>
+            </div>
+            <p class="text-xl mb-6">We create stunning motion graphics that bring your brand to life. From animated logos to full promotional videos, our motion design services help you connect with your audience in dynamic ways.</p>
+            
+            <div class="mb-8">
+              <h3 class="font-bold text-lg mb-2">What we offer:</h3>
+              <ul class="list-disc ml-6 space-y-2">
+                <li>Animated brand logos and assets</li>
+                <li>Social media motion graphics</li>
+                <li>Promotional video animations</li>
+                <li>Product explanation videos</li>
+                <li>UI/UX animations for websites and apps</li>
+                <li>Custom motion graphic packages</li>
+              </ul>
+            </div>
+            
+            <div class="flex gap-4 items-center">
+              <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 animate-on-scroll">
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-base-300 aspect-video flex items-center justify-center">
+              <video controls autoplay muted loop class="w-full h-full object-cover">
+                <source src="assets/videos/csf-world-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Design Service -->
+    <section id="web" class="section-padding bg-base-200 service-section">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll">
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-base-300 aspect-video flex items-center justify-center">
+              <video controls autoplay muted loop class="w-full h-full object-cover">
+                <source src="assets/videos/MONTAGE_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div class="animate-on-scroll">
+            <div class="flex items-center mb-4">
+              <div class="text-5xl text-primary mr-4">🖥️</div>
+              <h2 class="heading-md">Web Design & Development</h2>
+            </div>
+            <p class="text-xl mb-6">Our web design and development services create beautiful, functional websites that drive results. From simple landing pages to complex e-commerce stores, we build responsive sites that convert visitors into customers.</p>
+            
+            <div class="mb-8">
+              <h3 class="font-bold text-lg mb-2">What we offer:</h3>
+              <ul class="list-disc ml-6 space-y-2">
+                <li>Responsive website design</li>
+                <li>E-commerce development</li>
+                <li>Landing page optimization</li>
+                <li>UI/UX design</li>
+                <li>Website redesign and updates</li>
+                <li>Custom web applications</li>
+              </ul>
+            </div>
+            
+            <div class="flex gap-4 items-center">
+              <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+    <!-- Graphic Design Service -->
+    <section id="graphic" class="section-padding bg-base-100 service-section">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="order-2 lg:order-1 animate-on-scroll">
+            <div class="flex items-center mb-4">
+              <div class="text-5xl text-primary mr-4">🎨</div>
+              <h2 class="heading-md">Graphic Design</h2>
+            </div>
+            <p class="text-xl mb-6">Our graphic design services create visually appealing assets that strengthen your brand presence. From social media posts to print materials, we design graphics that capture attention and communicate effectively.</p>
+            
+            <div class="mb-8">
+              <h3 class="font-bold text-lg mb-2">What we offer:</h3>
+              <ul class="list-disc ml-6 space-y-2">
+                <li>Social media graphics</li>
+                <li>Print materials (brochures, business cards)</li>
+                <li>Marketing and advertising materials</li>
+                <li>Packaging design</li>
+                <li>Infographics and data visualization</li>
+                <li>Digital ad banners and creatives</li>
+              </ul>
+            </div>
+            
+            <div class="flex gap-4 items-center">
+
+              <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2 animate-on-scroll">
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-base-300 aspect-video flex items-center justify-center">
+              <!-- Graphic Design Portfolio Video -->
+              <video class="w-full h-full object-cover" controls autoplay muted loop>
+                <source src="assets/videos/Comp-.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Marketing Section -->
+    <section id="digital-marketing" class="section-padding bg-base-200">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Digital Marketing</h2>
+          <p class="text-xl max-w-3xl mx-auto">Boost your online presence and reach your target audience with our comprehensive digital marketing solutions.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="animate-on-scroll">
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="text-2xl text-primary">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">SEO & Content Marketing</h3>
+                  <p class="text-base-content/80">Improve your search engine rankings and drive organic traffic with our expert SEO strategies and content creation services.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="text-2xl text-primary">
+                  <i class="fas fa-hashtag"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Social Media Marketing</h3>
+                  <p class="text-base-content/80">Engage with your audience and build brand awareness across all major social media platforms.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="text-2xl text-primary">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Performance Marketing</h3>
+                  <p class="text-base-content/80">Drive targeted traffic and conversions through strategic PPC campaigns and display advertising.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="text-2xl text-primary">
+                  <i class="fas fa-bullhorn"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold mb-2">Email Marketing</h3>
+                  <p class="text-base-content/80">Nurture leads and maintain customer relationships with personalized email campaigns.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative animate-on-scroll">
+            <div class="aspect-video rounded-lg overflow-hidden shadow-xl">
+              <video class="w-full h-full object-cover" autoplay muted loop controls>
+                <source src="assets/videos/Merketing Comp..mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center animate-on-scroll">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding bg-primary text-primary-content">
+      <div class="container-custom text-center">
+        <div class="max-w-3xl mx-auto animate-on-scroll">
+          <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">Ready to start your next project?</h2>
+          <p class="text-xl mb-8">Let's create something amazing together. Contact us to discuss your creative needs and how we can help your brand grow.</p>
+          <div class="flex gap-4 justify-center">
+            <a href="contact.html" class="btn btn-lg glass">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-base-200 text-base-content">
+    <div class="container-custom py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <a href="index.html" class="flex items-center mb-4">
+            <img src="assets/images/csfworld-logo.svg" alt="CSFWorld Logo" class="h-10 mr-3">
+            <span class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></span>
+          </a>
+          <p class="mb-4">Motion. Web. Graphics. Logos. Video — all in one creative studio.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html#motion" class="hover:text-primary">Motion Design</a></li>
+            <li><a href="services.html#web" class="hover:text-primary">Web Development</a></li>
+            <li><a href="services.html#logo" class="hover:text-primary">Logo Design</a></li>
+            <li><a href="services.html#graphic" class="hover:text-primary">Graphic Design</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li><i class="fas fa-envelope mr-2"></i>info@csfworlds.com</li>
+            <li><i class="fas fa-phone mr-2"></i>01744712521</li>
+            <li><i class="fas fa-map-marker-alt mr-2"></i>Park More, Rangpur 5404</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary mt-4">Get in Touch</a>
+        </div>
+      </div>
+      
+      <div class="divider my-8"></div>
+      
+      <div class="text-center">
+        <p>&copy; 2025 CSF World. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 

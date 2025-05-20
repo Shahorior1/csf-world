@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - CSF World</title>
+  <meta name="description" content="Learn about CSF World, our creative studio's mission, values, and the team behind our creative services.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-base-100 shadow-md">
+    <div class="container-custom navbar py-4">
+      <div class="navbar-start">
+        <a href="index.html" class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></a>
+      </div>
+      
+      <div class="navbar-end">
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="btn btn-ghost lg:hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Desktop menu -->
+        <ul class="menu menu-horizontal hidden lg:flex">
+          <li><a href="index.html" class="font-semibold">Home</a></li>
+          <li><a href="services.html" class="font-semibold">Services</a></li>
+          <li><a href="about.html" class="font-semibold">About</a></li>
+          <li><a href="courses.html" class="font-semibold">Courses</a></li>
+          <li><a href="contact.html" class="font-semibold">Contact</a></li>
+        </ul>
+        
+        <!-- Theme toggle button -->
+        <button id="theme-toggle" class="btn btn-circle btn-ghost ml-4">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <ul class="menu menu-vertical p-4 bg-base-100 w-full">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Hero -->
+    <section class="bg-base-200 py-20">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h1 class="heading-lg mb-6">Our Story</h1>
+          <p class="text-xl max-w-3xl mx-auto">Meet the creative minds behind CSF World and discover what drives us to create exceptional work for our clients.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="section-padding bg-base-100">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="animate-on-scroll">
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+              <!-- Replace placeholder with actual image -->
+              <img src="assets/images/our-studio.png" alt="Our Studio" class="w-full h-auto">
+            </div>
+          </div>
+          <div class="animate-on-scroll">
+            <h2 class="heading-md mb-6">How We Started</h2>
+            <p class="text-lg mb-6">CSF World began with a simple vision: to create a studio where creativity meets functionality. Founded in 2015 by a group of passionate designers and developers, we set out to build a place where brands could find all their creative needs under one roof.</p>
+            
+            <p class="text-lg mb-6">What started as a small team working from a tiny office has grown into a full-service creative studio serving clients across various industries. Our journey hasn't always been smooth, but our commitment to quality and innovation has remained unwavering.</p>
+            
+            <p class="text-lg">Today, we're proud to be a trusted creative partner for businesses of all sizes, from startups to established brands. Our diverse team brings together expertise in motion design, web development, video production, and graphic design to deliver comprehensive creative solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="section-padding bg-base-200">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Our Mission & Values</h2>
+          <p class="text-xl max-w-2xl mx-auto">We're guided by a set of core principles that define how we work and what we stand for.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <!-- Mission -->
+          <div class="card bg-base-100 shadow-lg animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-2xl mb-4">Our Mission</h3>
+              <p class="text-lg mb-6">To empower brands with creative solutions that elevate their presence and connect meaningfully with their audience. We strive to blend artistry with strategy, creating work that not only looks good but also drives results.</p>
+              
+              <p class="text-lg">We believe in the power of creative collaboration, bringing together diverse perspectives and skills to solve complex challenges and create memorable experiences.</p>
+            </div>
+          </div>
+          
+          <!-- Values -->
+          <div class="card bg-base-100 shadow-lg animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-2xl mb-4">Our Values</h3>
+              <ul class="space-y-4">
+                <li class="flex">
+                  <div class="text-primary mr-3"><i class="fas fa-check-circle text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Creative Excellence</h4>
+                    <p>We push boundaries and never settle for ordinary.</p>
+                  </div>
+                </li>
+                <li class="flex">
+                  <div class="text-primary mr-3"><i class="fas fa-check-circle text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Client Partnership</h4>
+                    <p>We work with you, not just for you.</p>
+                  </div>
+                </li>
+                <li class="flex">
+                  <div class="text-primary mr-3"><i class="fas fa-check-circle text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Innovation</h4>
+                    <p>We embrace new technologies and approaches.</p>
+                  </div>
+                </li>
+                <li class="flex">
+                  <div class="text-primary mr-3"><i class="fas fa-check-circle text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Integrity</h4>
+                    <p>We're transparent, honest, and accountable.</p>
+                  </div>
+                </li>
+                <li class="flex">
+                  <div class="text-primary mr-3"><i class="fas fa-check-circle text-xl"></i></div>
+                  <div>
+                    <h4 class="font-bold mb-1">Impact</h4>
+                    <p>We create work that makes a difference.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section-padding bg-base-100">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Meet Our Team</h2>
+          <p class="text-xl max-w-2xl mx-auto">We're a diverse group of creative professionals passionate about crafting exceptional experiences.</p>
+        </div>
+        
+        <!-- Founder Row -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-center mb-8">Leader</h3>
+          <div class="flex justify-center">
+            <div class="card bg-base-200 animate-on-scroll max-w-md">
+              <figure class="px-10 pt-10">
+                <div class="avatar">
+                  <div class="w-40 rounded-full">
+                    <!-- Placeholder for founder photo -->
+                    <div class="bg-base-300 w-full h-full flex items-center justify-center">
+                      <i class="fas fa-user text-primary text-3xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-body items-center text-center">
+                <h3 class="card-title text-2xl">Nayeem Hossain</h3>
+                <p class="text-base-content/70 text-lg">Founder & Creative Director</p>
+                <p class="text-sm mt-2">With over 7 years in the creative industry, Nayeem leads our studio with vision and expertise.</p>
+                <div class="flex space-x-3 mt-3">
+                  <a href="#" class="btn btn-circle btn-sm btn-ghost"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="btn btn-circle btn-sm btn-ghost"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        
+        <!-- Team Members Row -->
+        <div>
+          <h3 class="text-2xl font-bold text-center mb-8">Team Members</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <!-- Team Member 1 -->
+            <div class="card bg-base-200 animate-on-scroll">
+              <figure class="px-6 pt-6">
+                <div class="avatar">
+                  <div class="w-24 rounded-full">
+                    <!-- Placeholder for team member photo -->
+                    <div class="bg-base-300 w-full h-full flex items-center justify-center">
+                      <i class="fas fa-user text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-body items-center text-center p-4">
+                <h3 class="card-title text-lg">Md Jahidul Islam</h3>
+                <p class="text-base-content/70 text-sm">Graphic Design Lead</p>
+                <p class="text-xs mt-1">Jahidul helps clients define their brand positioning and creative direction through stunning visual design.</p>
+                <div class="flex space-x-2 mt-2">
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 2 -->
+            <div class="card bg-base-200 animate-on-scroll">
+              <figure class="px-6 pt-6">
+                <div class="avatar">
+                  <div class="w-24 rounded-full">
+                    <!-- Placeholder for team member photo -->
+                    <div class="bg-base-300 w-full h-full flex items-center justify-center">
+                      <i class="fas fa-user text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-body items-center text-center p-4">
+                <h3 class="card-title text-lg">Sadik Shahorior</h3>
+                <p class="text-base-content/70 text-sm">Web Development Lead</p>
+                <p class="text-xs mt-1">Shahorior crafts beautiful, functional websites that deliver results for our clients</p>
+                <div class="flex space-x-2 mt-2">
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="card bg-base-200 animate-on-scroll">
+              <figure class="px-6 pt-6">
+                <div class="avatar">
+                  <div class="w-24 rounded-full">
+                    <!-- Placeholder for team member photo -->
+                    <div class="bg-base-300 w-full h-full flex items-center justify-center">
+                      <i class="fas fa-user text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-body items-center text-center p-4">
+                <h3 class="card-title text-lg">Jibon Islam</h3>
+                <p class="text-base-content/70 text-sm">Lead Motion Designer</p>
+                <p class="text-xs mt-1">Jibon brings brands to life through captivating motion design and animation.</p>
+                <div class="flex space-x-2 mt-2">
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-vimeo-v"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 4 -->
+            <div class="card bg-base-200 animate-on-scroll">
+              <figure class="px-6 pt-6">
+                <div class="avatar">
+                  <div class="w-24 rounded-full">
+                    <!-- Placeholder for team member photo -->
+                    <div class="bg-base-300 w-full h-full flex items-center justify-center">
+                      <i class="fas fa-user text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-body items-center text-center p-4">
+                <h3 class="card-title text-lg">Md Abdul Mazed</h3>
+                <p class="text-base-content/70 text-sm">Calligrapher</p>
+                <p class="text-xs mt-1">Abdul Mazed creates stunning calligraphy and lettering that adds a unique artistic touch to our projects.</p>
+                <div class="flex space-x-2 mt-2">
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-dribbble"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Team Member 5 -->
+            <div class="card bg-base-200 animate-on-scroll">
+              <figure class="px-6 pt-6">
+                <div class="avatar">
+                  <div class="w-24 rounded-full">
+                    <!-- Placeholder for team member photo -->
+                    <div class="bg-base-300 w-full h-full flex items-center justify-center">
+                      <i class="fas fa-user text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </figure>
+              <div class="card-body items-center text-center p-4">
+                <h3 class="card-title text-lg">Rahim Uddin</h3>
+                <p class="text-base-content/70 text-sm">Frontend Developer</p>
+                <p class="text-xs mt-1">Rahim translates designs into responsive, interactive websites using cutting-edge web technologies.</p>
+                <div class="flex space-x-2 mt-2">
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#" class="btn btn-circle btn-xs btn-ghost"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="section-padding bg-base-200">
+      <div class="container-custom">
+        <div class="text-center mb-16 animate-on-scroll">
+          <h2 class="heading-lg mb-4">Our Tools & Technologies</h2>
+          <p class="text-xl max-w-2xl mx-auto">We use industry-leading tools and technologies to deliver exceptional creative work.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Tool Category 1 -->
+          <div class="card bg-base-100 shadow-lg animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-xl">
+                <i class="fas fa-film text-primary mr-2"></i>
+                Motion Design
+              </h3>
+              <ul class="space-y-2 mt-4">
+                <li>Adobe After Effects</li>
+                <li>Cinema 2D/3D</li>
+                <li>Adobe Premiere Pro</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Tool Category 2 -->
+          <div class="card bg-base-100 shadow-lg animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-xl">
+                <i class="fas fa-code text-primary mr-2"></i>
+                Web Development
+              </h3>
+              <ul class="space-y-2 mt-4">
+                <li>HTML5/CSS3/JavaScript</li>
+                <li>TypeScript,Kotlin</li>
+                <li>React.js</li>
+                <li>Tailwind CSS</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Tool Category 3 -->
+          <div class="card bg-base-100 shadow-lg animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-xl">
+                <i class="fas fa-palette text-primary mr-2"></i>
+                Design
+              </h3>
+              <ul class="space-y-2 mt-4">
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Traditional Calligraphy Tools</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Tool Category 4 - Digital Marketing -->
+          <div class="card bg-base-100 shadow-lg animate-on-scroll">
+            <div class="card-body">
+              <h3 class="card-title text-xl">
+                <i class="fas fa-bullhorn text-primary mr-2"></i>
+                Digital Marketing
+              </h3>
+              <ul class="space-y-2 mt-4">
+                <li>Google Analytics</li>
+                <li>Meta Ads Manager</li>
+                <li>SEO Tools</li>
+                <li>Email Marketing Platforms</li>
+                <li>Social Media Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding bg-primary text-primary-content">
+      <div class="container-custom text-center">
+        <div class="max-w-3xl mx-auto animate-on-scroll">
+          <h2 class="text-4xl md:text-5xl font-bold font-display mb-6">Ready to work with us?</h2>
+          <p class="text-xl mb-8">Let's create something amazing together. Reach out and start a conversation about your project.</p>
+          <div class="flex gap-4 justify-center">
+            <a href="contact.html" class="btn btn-lg glass">Contact Us</a>
+            <a href="services.html" class="btn btn-lg btn-outline">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-base-200 text-base-content">
+    <div class="container-custom py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <a href="index.html" class="text-2xl font-bold font-display mb-4 inline-block">CSF<span class="text-primary">World</span></a>
+          <p class="mb-4">Motion. Web. Graphics. Logos. Video — all in one creative studio.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html#motion" class="hover:text-primary">Motion Design</a></li>
+            <li><a href="services.html#web" class="hover:text-primary">Web Development</a></li>
+            <li><a href="services.html#logo" class="hover:text-primary">Logo Design</a></li>
+            <li><a href="services.html#graphic" class="hover:text-primary">Graphic Design</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li><i class="fas fa-envelope mr-2"></i>info@csfworlds.com</li>
+            <li><i class="fas fa-phone mr-2"></i>+8801744712521</li>
+            <li><i class="fas fa-map-marker-alt mr-2"></i>Park More, Rangpur 5404</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary mt-4">Get in Touch</a>
+        </div>
+      </div>
+      
+      <div class="divider my-8"></div>
+      
+      <div class="text-center">
+        <p>&copy; 2025 CSF World. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 

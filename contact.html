@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - CSF World</title>
+  <meta name="description" content="Get in touch with CSF World creative studio for all your design, web, and video needs.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .contact-gradient {
+      background: linear-gradient(135deg, rgba(52, 144, 220, 0.05), rgba(245, 101, 101, 0.05));
+    }
+    
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="overflow-fix">
+  <header class="bg-base-100 shadow-md">
+    <div class="container-custom navbar py-4">
+      <div class="navbar-start">
+        <a href="index.html" class="text-2xl font-bold font-display">CSF<span class="text-primary">World</span></a>
+      </div>
+      
+      <div class="navbar-end">
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="btn btn-ghost lg:hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <!-- Desktop menu -->
+        <ul class="menu menu-horizontal hidden lg:flex">
+          <li><a href="index.html" class="font-semibold">Home</a></li>
+          <li><a href="services.html" class="font-semibold">Services</a></li>
+          <li><a href="about.html" class="font-semibold">About</a></li>
+          <li><a href="courses.html" class="font-semibold">Courses</a></li>
+          <li><a href="contact.html" class="font-semibold">Contact</a></li>
+        </ul>
+        
+        <!-- Theme toggle button -->
+        <button id="theme-toggle" class="btn btn-circle btn-ghost ml-4">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden lg:hidden">
+      <ul class="menu menu-vertical p-4 bg-base-100 w-full">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="bg-base-200 py-16">
+      <div class="container-custom">
+        <div class="text-center animate-on-scroll">
+          <h1 class="text-4xl md:text-5xl font-bold font-display mb-4">Get in Touch</h1>
+          <p class="text-xl content-narrow">Have a project in mind? Let's discuss how we can bring your vision to life.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form and Info -->
+    <section class="py-20 contact-gradient">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Contact Form -->
+          <div class="card bg-base-100 shadow-xl animate-on-scroll">
+            <div class="card-body">
+              <h2 class="card-title text-2xl font-bold mb-6">Send Us a Message</h2>
+              
+              <form id="contact-form" class="space-y-6">
+                <div class="form-control">
+                  <label class="label" for="name">
+                    <span class="label-text">Full Name</span>
+                  </label>
+                  <input type="text" id="name" placeholder="Your name" class="input input-bordered w-full" required />
+                </div>
+                
+                <div class="form-control">
+                  <label class="label" for="email">
+                    <span class="label-text">Email</span>
+                  </label>
+                  <input type="email" id="email" placeholder="Your email" class="input input-bordered w-full" required />
+                </div>
+                
+                <div class="form-control">
+                  <label class="label" for="phone">
+                    <span class="label-text">Phone Number</span>
+                  </label>
+                  <input type="tel" id="phone" placeholder="Your phone number" class="input input-bordered w-full" />
+                </div>
+                
+                <div class="form-control">
+                  <label class="label" for="service">
+                    <span class="label-text">Service Interested In</span>
+                  </label>
+                  <select id="service" class="select select-bordered w-full">
+                    <option disabled selected>Select a service</option>
+                    <option>Motion Design</option>
+                    <option>Web Development</option>
+                    <option>Logo Design</option>
+                    <option>Graphic Design</option>
+                    <option>Multiple Services</option>
+                  </select>
+                </div>
+                
+                <div class="form-control">
+                  <label class="label" for="message">
+                    <span class="label-text">Message</span>
+                  </label>
+                  <textarea id="message" class="textarea textarea-bordered h-32" placeholder="Tell us about your project" required></textarea>
+                </div>
+                
+                <div class="form-control">
+                  <label class="label cursor-pointer">
+                    <span class="label-text">I agree to the privacy policy</span> 
+                    <input type="checkbox" class="checkbox checkbox-primary" required />
+                  </label>
+                </div>
+                
+                <div class="form-control mt-6">
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+              </form>
+              
+              <div id="form-success" class="alert alert-success shadow-lg mt-6 hidden">
+                <div>
+                  <i class="fas fa-check-circle"></i>
+                  <span>Thank you! Your message has been sent successfully.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="space-y-8 animate-on-scroll">
+            <div class="card bg-base-100 shadow-lg">
+              <div class="card-body">
+                <h2 class="card-title text-2xl font-bold mb-4">Contact Information</h2>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <i class="fas fa-envelope text-primary mt-1 mr-4 text-xl"></i>
+                    <div>
+                      <h3 class="font-semibold">Email Us</h3>
+                      <a href="mailto:info@csfworlds.com" class="link link-hover">info@csfworlds.com</a>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-phone text-primary mt-1 mr-4 text-xl"></i>
+                    <div>
+                      <h3 class="font-semibold">Call Us</h3>
+                      <a href="tel:+8801744712521" class="link link-hover">+8801744712521</a>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-map-marker-alt text-primary mt-1 mr-4 text-xl"></i>
+                    <div>
+                      <h3 class="font-semibold">Visit Us</h3>
+                      <p>Park More, Rangpur<br>5404, Bangladesh</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-clock text-primary mt-1 mr-4 text-xl"></i>
+                    <div>
+                      <h3 class="font-semibold">Business Hours</h3>
+                      <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 2pm<br>Sunday: Closed</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="card bg-base-100 shadow-lg">
+              <div class="card-body">
+                <h2 class="card-title text-2xl font-bold mb-4">Connect With Us</h2>
+                <p class="mb-4">Follow us on social media to see our latest work and updates.</p>
+                <div class="flex flex-wrap gap-4">
+                  <a href="#" class="btn btn-circle btn-outline"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="btn btn-circle btn-outline"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="btn btn-circle btn-outline"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="btn btn-circle btn-outline"><i class="fab fa-youtube"></i></a>
+                  <a href="#" class="btn btn-circle btn-outline"><i class="fab fa-linkedin"></i></a>
+                  <a href="#" class="btn btn-circle btn-outline"><i class="fab fa-behance"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-base-200">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl font-bold font-display mb-4">Our Location</h2>
+          <p class="text-lg content-narrow">Visit our studio to discuss your project in person.</p>
+        </div>
+        
+        <div class="card bg-base-100 shadow-xl animate-on-scroll">
+          <div class="card-body p-0">
+            <!-- Replace with actual Google Maps embed in production -->
+            <div class="aspect-[16/9] w-full bg-base-300 flex items-center justify-center">
+              <div class="text-center p-8">
+                <i class="fas fa-map-marked-alt text-6xl text-primary mb-4"></i>
+                <p class="text-lg">Google Maps would be embedded here</p>
+                <p class="text-sm mt-2">123 Creative St, Design City, CA 90210, USA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+      <div class="container-custom">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl font-bold font-display mb-4">Frequently Asked Questions</h2>
+          <p class="text-lg content-narrow">Find answers to common questions about our services and process.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-on-scroll">
+          <!-- FAQ Item 1 -->
+          <div class="collapse collapse-plus bg-base-100 shadow-lg">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              What is your typical project timeline?
+            </div>
+            <div class="collapse-content"> 
+              <p>Project timelines vary based on complexity and scope. Typically, logo designs take 1-2 weeks, websites 3-6 weeks, and video projects 2-4 weeks. We'll provide you with a detailed timeline during our initial consultation.</p>
+            </div>
+          </div>
+          
+          <!-- FAQ Item 2 -->
+          <div class="collapse collapse-plus bg-base-100 shadow-lg">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              How much do your services cost?
+            </div>
+            <div class="collapse-content"> 
+              <p>Our pricing varies based on project requirements and scope. We offer tiered packages for most services, and we're happy to provide a custom quote after understanding your specific needs. Check our <a href="pricing.html" class="link link-primary">pricing page</a> for more details.</p>
+            </div>
+          </div>
+          
+          <!-- FAQ Item 3 -->
+          <div class="collapse collapse-plus bg-base-100 shadow-lg">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              Do you offer revisions on your work?
+            </div>
+            <div class="collapse-content"> 
+              <p>Yes, all our service packages include a specific number of revision rounds. Our standard packages typically include 2-3 rounds of revisions, while premium packages offer unlimited revisions within a reasonable timeframe.</p>
+            </div>
+          </div>
+          
+          <!-- FAQ Item 4 -->
+          <div class="collapse collapse-plus bg-base-100 shadow-lg">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              What information do you need to start a project?
+            </div>
+            <div class="collapse-content"> 
+              <p>To get started, we'll need your project goals, target audience information, brand guidelines (if available), content requirements, and any specific preferences. Our detailed creative brief will guide you through providing all necessary information.</p>
+            </div>
+          </div>
+          
+          <!-- FAQ Item 5 -->
+          <div class="collapse collapse-plus bg-base-100 shadow-lg">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              Do you work with clients internationally?
+            </div>
+            <div class="collapse-content"> 
+              <p>Yes, we work with clients worldwide. Our process is designed to accommodate remote collaboration with clear communication channels, regular updates, and flexible meeting schedules across different time zones.</p>
+            </div>
+          </div>
+          
+          <!-- FAQ Item 6 -->
+          <div class="collapse collapse-plus bg-base-100 shadow-lg">
+            <input type="checkbox" /> 
+            <div class="collapse-title text-xl font-medium">
+              What happens after my project is completed?
+            </div>
+            <div class="collapse-content"> 
+              <p>After project completion, we provide all necessary files and documentation. We offer 30 days of support for any minor adjustments. For websites, we offer optional maintenance packages. We're always available for future updates or new projects.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-12 animate-on-scroll">
+          <p class="mb-6">Still have questions? We're here to help!</p>
+          <a href="mailto:hello@csfworld.com" class="btn btn-primary">Email Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-primary-content">
+      <div class="container-custom">
+        <div class="text-center animate-on-scroll">
+          <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">Ready to Start Your Project?</h2>
+          <p class="text-xl mb-8 content-narrow">Book a free 30-minute strategy call to discuss your needs and how we can help bring your vision to life.</p>
+          <a href="#contact-form" class="btn btn-lg btn-secondary text-secondary-content">Schedule Your Free Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-base-200 text-base-content">
+    <div class="container-custom py-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <a href="index.html" class="text-2xl font-bold font-display mb-4 inline-block">CSF<span class="text-primary">World</span></a>
+          <p class="mb-4">Motion. Web. Graphics. Logos. Video — all in one creative studio.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="btn btn-circle btn-ghost"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="services.html#motion" class="hover:text-primary">Motion Design</a></li>
+            <li><a href="services.html#web" class="hover:text-primary">Web Design</a></li>
+            <li><a href="services.html#video" class="hover:text-primary">Video Editing</a></li>
+            <li><a href="services.html#logo" class="hover:text-primary">Logo Design</a></li>
+            <li><a href="services.html#graphic" class="hover:text-primary">Graphic Design</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-primary">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li><i class="fas fa-envelope mr-2"></i>info@csfworlds.com</li>
+            <li><i class="fas fa-phone mr-2"></i>+8801744712521</li>
+            <li><i class="fas fa-map-marker-alt mr-2"></i>Park More, Rangpur 5404</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary mt-4">Get in Touch</a>
+        </div>
+      </div>
+      
+      <div class="divider my-8"></div>
+      
+      <div class="text-center">
+        <p>&copy; 2025 CSF World. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html> 
